@@ -1,4 +1,4 @@
-# Incremental Snapshot Backup – RL Gym Task
+# SnapStore-CLI – RL Gym Task
 
 Repository-level software engineering task used to evaluate autonomous coding agents.
 
