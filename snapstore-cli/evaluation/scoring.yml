@@ -1,0 +1,11 @@
+# Component weights must sum to exactly 1.0
+
+weights:
+  core: 0.30          # basic backup / restore / list / verify
+  advanced: 0.30      # hard links, sparse files, prune integrity, corruption detection
+  resilience: 0.30    # concurrent modification + crash injection
+  errors: 0.10        # proper error handling on bad input
+
+# Mapping from check groups to the weights above.
+# Individual checks inside a group share the group weight equally
+# when computing the final score.

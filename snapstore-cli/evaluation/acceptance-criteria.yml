@@ -1,0 +1,82 @@
+# Maps observable requirements to verifier check IDs.
+# Check IDs correspond to the assertions in evaluation/run_tests.sh
+
+- id: backup-creates-snapshot
+  description: backup command creates a new snapshot and prints its ID
+  weight_group: core
+
+- id: snapshot-in-list
+  description: newly created snapshot appears in list output
+  weight_group: core
+
+- id: restore-exits-zero
+  description: restore of a valid snapshot exits with code 0
+  weight_group: core
+
+- id: restore-content-fidelity
+  description: restored files match original content
+  weight_group: core
+
+- id: hardlink-preservation
+  description: hard-linked files share the same inode after restore
+  weight_group: advanced
+
+- id: sparse-logical-size
+  description: sparse file logical size is preserved on restore
+  weight_group: advanced
+
+- id: sparse-allocated-blocks
+  description: sparse file remains sparse (allocated blocks much smaller than logical size)
+  weight_group: advanced
+
+- id: multiple-snapshots
+  description: successive backups produce distinct snapshots visible in list
+  weight_group: core
+
+- id: verify-clean
+  description: verify succeeds on an uncorrupted repository
+  weight_group: core
+
+- id: prune-keep
+  description: prune --keep N retains exactly N newest snapshots
+  weight_group: advanced
+
+- id: restore-after-prune
+  description: remaining snapshots restore correctly after prune
+  weight_group: advanced
+
+- id: verify-detects-corruption
+  description: verify exits non-zero when a content object is missing
+  weight_group: advanced
+
+- id: error-missing-source
+  description: backup on non-existent source exits non-zero
+  weight_group: errors
+
+- id: error-missing-snapshot
+  description: restore of unknown snapshot ID exits non-zero
+  weight_group: errors
+
+- id: concurrent-backup-produces-snapshot
+  description: backup under concurrent source modification still produces a snapshot
+  weight_group: resilience
+
+- id: concurrent-snapshot-restores
+  description: snapshot taken during concurrent modification restores successfully
+  weight_group: resilience
+
+- id: concurrent-consistent-content
+  description: restored content after concurrent modification is non-empty and consistent
+  weight_group: resilience
+
+- id: list-after-crash
+  description: list still works after a backup process is killed with SIGKILL
+  weight_group: resilience
+
+- id: verify-after-crash
+  description: verify (or prior snapshot) still succeeds after SIGKILL mid-backup
+  weight_group: resilience
+
+- id: backup-after-crash
+  description: a subsequent backup succeeds after a previous crash
+  weight_group: resilience

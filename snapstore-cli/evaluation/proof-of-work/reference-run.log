@@ -1,0 +1,29 @@
+
+==== RESULTS ====
+PASS  backup creates snapshot
+PASS  snapshot appears in list
+PASS  restore exits 0
+PASS  restored file1 content
+PASS  restored nested content
+PASS  hard links share inode after restore
+PASS  sparse logical size preserved
+PASS  sparse file remains sparse after restore (blocks=2048 < 2056)
+PASS  two snapshots listed
+PASS  verify clean repository
+PASS  prune --keep 1
+PASS  only one snapshot after prune
+PASS  remaining snapshot is the newest
+PASS  restore after prune
+PASS  extra.txt present after prune restore
+PASS  verify detects missing object
+PASS  backup missing source
+PASS  restore missing snapshot
+PASS  concurrent backup produced a snapshot
+PASS  concurrent snapshot restores
+PASS  concurrent snapshot has consistent mutable.txt
+PASS  list works after crash
+PASS  verify works after crash
+PASS  backup succeeds after previous crash
+
+Passed: 24   Failed: 0
+Score: 1.0000

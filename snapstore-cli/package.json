@@ -1,0 +1,12 @@
+{
+  "name": "incremental-snapshot-backup",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RL Gym task: incremental content-addressable snapshot backup tool with hard-link and sparse-file support",
+  "scripts": {
+    "generate": "echo 'Model generation step – run the agent against task/instruction.md and place output in solution/'",
+    "score": "bash evaluation/run_tests.sh",
+    "check:mutants": "bash evaluation/check_mutants.sh",
+    "check:reference": "bash evaluation/run_tests.sh --reference"
+  }
+}
